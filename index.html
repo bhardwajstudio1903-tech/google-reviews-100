@@ -1,217 +1,268 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Give Review - Bhardwaj Photography</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 15px;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 5px;
+    }
+    p.subtitle {
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .card {
+      background: #ffffff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border: 1px solid #e0e0e0;
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    .card:active {
+      transform: scale(0.98);
+      background-color: #e8f0fe;
+    }
+    .stars {
+      color: #f4c430;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+    .review-text {
+      font-size: 15px;
+      color: #222;
+      line-height: 1.4;
+    }
+    .btn-hint {
+      margin-top: 8px;
+      font-size: 12px;
+      color: #1a73e8;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
 
-const languageDrafts = {
-  English: {
-    details: [
-      "The experience gave us an opportunity to preserve meaningful memories and revisit the occasion with our family.",
-      "We appreciated having photographs that help us remember the people, emotions and little moments from our celebration.",
-      "The team supported us during the photography process, and we enjoyed looking back at the moments captured that day.",
-      "For us, these photographs are a personal record of an important occasion, and we are glad to have them.",
-      "Looking through the pictures brings back memories of our celebration and the people who shared that special time with us."
-    ],
-    endings: [
-      "Thank you to Ankit Bhardwaj and the team for their work. We recommend sharing your requirements clearly before the shoot.",
-      "Our experience was positive in the areas that mattered to us, and we appreciate the effort put into the photography.",
-      "We are happy to keep these memories and revisit them with our loved ones in the years ahead.",
-      "Thank you, Bhardwaj Photography FZD, for helping us document this occasion. We will treasure the memories that matter to us.",
-      "Anyone considering the service should discuss their event needs and expectations with the team before booking."
-    ]
-  },
-  "हिंदी": {
-    details: [
-      "इन तस्वीरों को देखकर हमें अपने परिवार, दोस्तों और समारोह के कई खास पल फिर से याद आते हैं।",
-      "हमारे लिए ये तस्वीरें सिर्फ फोटो नहीं, बल्कि एक महत्वपूर्ण अवसर की यादों को सुरक्षित रखने का माध्यम हैं।",
-      "शूट के दौरान मिले सहयोग और तस्वीरों में कैद पलों को देखकर हमें अपने समारोह की याद आती है।",
-      "परिवार के साथ तस्वीरें देखना अच्छा लगता है और उन पलों को दोबारा याद करने का मौका मिलता है।",
-      "हमारे अनुभव में समारोह की यादों को तस्वीरों में सहेजना महत्वपूर्ण रहा और इन यादों को संभालकर रखेंगे।"
-    ],
-    endings: [
-      "हमारे अनुभव के लिए Bhardwaj Photography FZD और अंकित भारद्वाज की टीम का धन्यवाद।",
-      "बुकिंग से पहले अपनी जरूरतों और पसंद के बारे में टीम से स्पष्ट बातचीत करना उपयोगी रहेगा।",
-      "इन यादों को सुरक्षित रखने में सहयोग देने के लिए टीम का आभार।",
-      "हम अपने अनुभव से मेल खाने वाली बातों को साझा करना पसंद करते हैं और टीम को शुभकामनाएँ देते हैं।",
-      "हमारे लिए यह अवसर खास था और इसकी यादें आने वाले समय में भी महत्वपूर्ण रहेंगी।"
-    ]
-  },
-  Hinglish: {
-    details: [
-      "Photos dekhkar family, friends aur celebration ke kai special moments phir se yaad aa jaate hain.",
-      "Hamare liye ye pictures important memories ko preserve karne aur baad mein unhe dobara dekhne ka achha tareeka hain.",
-      "Photography ke dauran team ke support se humein apne event ke moments ko yaad rakhne mein help mili.",
-      "In photos ko family ke saath share karna aur us din ki memories ko revisit karna achha lagta hai.",
-      "Hamare liye ye pictures ek special occasion ki personal memories hain, jinhe hum sambhal kar rakhna chahte hain."
-    ],
-    endings: [
-      "Ankit Bhardwaj aur Bhardwaj Photography FZD ki team ko thank you for their work.",
-      "Booking se pehle apni requirements aur expectations team ke saath discuss karna helpful rahega.",
-      "Hum in memories ko future mein bhi family ke saath dekhna pasand karenge. Thank you team.",
-      "Hamare experience se jo baatein match karti hain, unhe share karna humein sahi lagta hai.",
-      "Special moments capture karne ke liye team ko thanks, aur aage ke projects ke liye best wishes."
-    ]
-  }
-};
+<div class="container">
+  <h2>Aapka Anubhav Kaisa Raha?</h2>
+  <p class="subtitle">Kripya koi bhi ek review chunne ke liye uspar tap karein:</p>
 
-const englishGroups = [
-  {cat:"wedding", intros:[
-    "Our wedding photography experience with Bhardwaj Photography FZD was a meaningful part of our celebration.",
-    "We chose Bhardwaj Photography FZD to photograph our wedding and appreciated having a record of the day.",
-    "Our wedding brought together many people we care about, and photography helped us preserve those memories.",
-    "We wanted photographs that would help us remember our wedding celebration and the people who joined us.",
-    "Wedding photography was an important part of our plans, and we were pleased to have these moments documented."
-  ]},
-  {cat:"candid", intros:[
-    "The candid photography from our event helped us remember natural moments with our family and friends.",
-    "We enjoyed looking at candid pictures that captured expressions and interactions during our celebration.",
-    "Our candid photography coverage gave us photographs of moments that happened naturally throughout the occasion.",
-    "We appreciate candid pictures because they help preserve genuine expressions and small details from an event.",
-    "The candid photographs from our function are a lovely way for us to revisit moments with our guests."
-  ]},
-  {cat:"cinematic", intros:[
-    "Our cinematic wedding film gives us another way to remember the emotions and events of our special day.",
-    "We enjoyed revisiting our celebration through the cinematic video prepared for our wedding.",
-    "Having a wedding film helps us remember the atmosphere, people and important moments from the occasion.",
-    "The cinematic video is part of how we preserve memories from our wedding and share them with family.",
-    "We wanted video coverage of our celebration, and the film gives us a way to revisit that day."
-  ]},
-  {cat:"pre", intros:[
-    "Our pre-wedding photography session was a chance to create memories before the wedding celebrations began.",
-    "We enjoyed taking time for a pre-wedding shoot and keeping the photographs from that stage of our journey.",
-    "The pre-wedding session gave us pictures that we can look back on as part of our story together.",
-    "We wanted pre-wedding photographs that reflected our own experience, and we value these memories.",
-    "Our pre-wedding shoot was a special part of our preparations, and we are glad to have the pictures."
-  ]},
-  {cat:"event", intros:[
-    "Our engagement photography helped us preserve memories of the ceremony and the people who celebrated with us.",
-    "The ring ceremony was an important family occasion, and we wanted photographs to remember it by.",
-    "We arranged photography for our engagement so we could keep a record of the special moments.",
-    "Our family celebration included many meaningful interactions, and the photographs help us remember them.",
-    "The photography from our event gives us pictures to share with family members who joined the celebration."
-  ]},
-  {cat:"team", intros:[
-    "Our experience working with the Bhardwaj Photography FZD team began with discussing our photography requirements.",
-    "We appreciated having an opportunity to explain what mattered to us before our photography session.",
-    "The photography process involved coordination with the team, and we valued being able to discuss our needs.",
-    "We wanted a photography team that understood the occasion and the moments we hoped to remember.",
-    "Our booking experience gave us an opportunity to discuss event coverage and the photographs we wanted."
-  ]},
-  {cat:"album", intros:[
-    "Our photo album brings together selected memories from the occasion in a format we can revisit.",
-    "We enjoy looking through printed photographs because they give our family a way to share memories together.",
-    "Keeping our favourite event pictures in an album makes it easy to revisit important moments.",
-    "The photographs we selected for our album help tell the story of our celebration and our guests.",
-    "We wanted an album that brought together meaningful pictures from the day for us to keep."
-  ]},
-  {cat:"short", intros:[
-    "Our experience with Bhardwaj Photography FZD gave us photographs to remember our special occasion.",
-    "We value having a collection of pictures that helps us revisit our celebration with family.",
-    "Photography helped us keep a record of a meaningful day and the people who were there.",
-    "We enjoyed revisiting the memories captured during our event and sharing selected pictures with loved ones.",
-    "We are glad to have photographs that remind us of the moments we wanted to preserve."
-  ]},
-  {cat:"wedding", intros:[
-    "For our wedding, we wanted to preserve both the important ceremonies and the smaller moments between them.",
-    "Wedding photographs are meaningful to our family, so we wanted a record of the celebration from beginning to end.",
-    "We wanted to remember the people, traditions and atmosphere that made our wedding day personal to us.",
-    "Our wedding brought together different generations of our family, and the photographs help us remember that gathering.",
-    "We appreciate having wedding pictures that we can revisit as our family grows and time passes."
-  ]},
-  {cat:"event", intros:[
-    "Our family function was a special gathering, and we wanted photographs to preserve the memories it created.",
-    "We arranged event photography to keep a record of the occasion and the people who attended.",
-    "The pictures from our celebration help us remember the atmosphere and interactions from that day.",
-    "We wanted our event photographs to be something we could share and look through again in the future.",
-    "Photography was one way we chose to preserve the memories of this important family occasion."
-  ]}
-];
+  <script>
+    // Google Review Link
+    const googleReviewUrl = "https://g.page/r/Cfr7-KvH7iK3EAE/review";
 
-const hindiGroups = [
-  {cat:"wedding", intros:[
-    "हमने अपनी शादी की फोटोग्राफी के लिए Bhardwaj Photography FZD को चुना और इस अवसर की यादें सुरक्षित रखीं।",
-    "हमारी शादी परिवार के लिए खास थी और हम उसके महत्वपूर्ण पलों की तस्वीरें संभालकर रखना चाहते थे।",
-    "शादी के समारोह में परिवार और दोस्तों के साथ बिताए समय की यादें हमारे लिए बहुत मायने रखती हैं।",
-    "हम चाहते थे कि शादी के खास पलों की तस्वीरें आने वाले वर्षों में भी हमें उस दिन की याद दिलाएँ।",
-    "हमारी शादी की फोटोग्राफी हमारे लिए इस महत्वपूर्ण अवसर को याद रखने का एक माध्यम बनी।"
-  ]},
-  {cat:"candid", intros:[
-    "कैंडिड फोटोग्राफी में समारोह के दौरान परिवार और दोस्तों के साथ बिताए स्वाभाविक पलों को याद रखने में मदद मिली।",
-    "हमें ऐसी तस्वीरें पसंद हैं जिनमें लोगों की स्वाभाविक मुस्कान और भावनाएँ दिखाई देती हैं।",
-    "हमारे कार्यक्रम की कैंडिड तस्वीरें हमें उन पलों की याद दिलाती हैं जो बिना किसी तैयारी के आए थे।",
-    "कैंडिड फोटो हमारे लिए समारोह के छोटे-छोटे लेकिन यादगार पलों को सुरक्षित रखने का तरीका हैं।",
-    "परिवार और दोस्तों के साथ बिताए सहज पलों की तस्वीरें देखकर हमें उस दिन की याद आती है।"
-  ]},
-  {cat:"cinematic", intros:[
-    "हमारी शादी की सिनेमैटिक फिल्म समारोह के पलों और भावनाओं को दोबारा याद करने का अवसर देती है।",
-    "वीडियो में अपने खास दिन के पलों को देखना हमारे लिए यादगार अनुभव रहा।",
-    "हम अपने समारोह की यादों को तस्वीरों के साथ वीडियो में भी सुरक्षित रखना चाहते थे।",
-    "सिनेमैटिक वीडियो हमें शादी के माहौल और समारोह में शामिल लोगों को फिर से याद करने में मदद करता है।",
-    "हमारे लिए शादी की फिल्म इस अवसर की यादों को परिवार के साथ साझा करने का एक माध्यम है।"
-  ]},
-  {cat:"album", intros:[
-    "फोटो एल्बम में हमारे चुने हुए पलों को एक साथ देखकर परिवार के साथ यादें साझा करना आसान होता है।",
-    "हम अपने पसंदीदा फोटो एल्बम में संभालकर रखना चाहते थे ताकि उन्हें भविष्य में भी देख सकें।",
-    "एल्बम में समारोह की तस्वीरें एक साथ होने से उस दिन की यादों को दोबारा देखना अच्छा लगता है।",
-    "हमारे परिवार के लिए तस्वीरें यादों का हिस्सा हैं और एल्बम उन्हें संभालकर रखने का एक तरीका है।",
-    "हमने अपने समारोह की कुछ खास तस्वीरों को एल्बम के लिए चुना ताकि उन्हें आसानी से देखा जा सके।"
-  ]}
-];
+    function selectAndRedirect(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Review copy ho gaya hai! Ab Google par paste karke post kar dein.");
+        window.location.href = googleReviewUrl;
+      }).catch(err => {
+        window.location.href = googleReviewUrl;
+      });
+    }
+  </script>
 
-const hinglishGroups = [
-  {cat:"wedding", intros:[
-    "Hamari wedding photography ke liye Bhardwaj Photography FZD ko choose kiya, taaki special day ki memories preserve kar saken.",
-    "Wedding hamare family ke liye important occasion tha, isliye hum uske special moments ki photos rakhna chahte the.",
-    "Shaadi mein family aur friends ke saath bitaye moments hamare liye meaningful hain aur photos unhe yaad rakhne mein help karti hain.",
-    "Hamari wedding photos future mein bhi us din ki memories ko revisit karne ka ek achha tareeka rahengi.",
-    "Wedding photography hamare celebration ka important part thi aur hum us din ke moments ko sambhal kar rakhna chahte the."
-  ]},
-  {cat:"candid", intros:[
-    "Hamare function ki candid photography ne family aur friends ke saath natural moments ko yaad rakhne mein help ki.",
-    "Humein candid photos pasand hain kyunki unmein logon ke natural expressions aur real emotions dikhte hain.",
-    "Event ke dauran capture hue candid moments dekhkar humein celebration ki memories phir se yaad aati hain.",
-    "Candid pictures hamare liye un chhote special moments ko preserve karne ka tareeka hain jo naturally hue.",
-    "Family ke saath li gayi natural photos dekhna achha lagta hai aur unse us din ki yaadein fresh ho jaati hain."
-  ]},
-  {cat:"cinematic", intros:[
-    "Hamari cinematic wedding film humein special day ke moments aur emotions ko dobara experience karne ka chance deti hai.",
-    "Wedding video mein apne celebration ke moments dekhkar us din ki memories phir se fresh ho jaati hain.",
-    "Hum apne wedding function ki memories photos ke saath video mein bhi preserve karna chahte the.",
-    "Cinematic film hamare liye celebration ke atmosphere aur family moments ko yaad rakhne ka ek tareeka hai.",
-    "Wedding video ko family ke saath dekhna achha lagta hai kyunki ismein special occasion ki memories hain."
-  ]},
-  {cat:"pre", intros:[
-    "Hamare pre-wedding shoot ka experience ek special memory hai jise hum photos ke through sambhal kar rakhna chahte hain.",
-    "Pre-wedding photography hamari journey ka ek important part thi aur humein iske moments preserve karna achha laga.",
-    "Pre-wedding shoot ke pictures humein wedding se pehle ke is special time ki memories yaad dilate hain.",
-    "Hum pre-wedding photos chahte the jinhe future mein dekhkar is stage ko phir se yaad kar saken.",
-    "Hamare pre-wedding session ne humein apni story ke is part ki pictures rakhne ka mauka diya."
-  ]},
-  {cat:"event", intros:[
-    "Hamari ring ceremony family ke liye special occasion thi aur hum uske moments ko photos mein preserve karna chahte the.",
-    "Engagement function ki photos humein family aur friends ke saath celebration ki memories yaad dilati hain.",
-    "Humne apne event ke liye photography arrange ki taaki special moments ka record hamare paas rahe.",
-    "Family function mein kai meaningful moments the aur photos unhe future mein revisit karne mein help karti hain.",
-    "Hamare celebration ki pictures family ke saath memories share karne ka ek achha tareeka hain."
-  ]},
-  {cat:"album", intros:[
-    "Hamare photo album mein selected memories ek jagah hain aur family ke saath unhe dekhna achha lagta hai.",
-    "Hum apni favourite event photos album mein rakhna chahte the taaki future mein bhi unhe easily dekh saken.",
-    "Album mein special pictures ko ek saath dekhkar hamare celebration ki memories phir se yaad aati hain.",
-    "Family ke liye photos important hain aur album un memories ko sambhal kar rakhne ka ek tareeka hai.",
-    "Hamne event ki favourite pictures select ki taaki unhe album mein preserve karke rakh saken."
-  ]}
-];
+  <!-- Total 30 SEO Optimized Reviews (1 to 15 Set A) -->
 
-function buildDrafts(lang, groups) {
-  const language = languageDrafts[lang];
-  return groups.flatMap((group, groupIndex) =>
-    group.intros.map((intro, i) => ({
-      lang,
-      cat: group.cat,
-      text: `${intro} ${language.details[(i + groupIndex) % 5]} ${language.endings[(i + groupIndex) % 5]}`
-    }))
-  );
-}
+  <div class="card" onclick="selectAndRedirect('Bhardwaj Photography is hands down the best wedding photographer! Unka candid photography aur video editing work top class hai.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Bhardwaj Photography is hands down the best wedding photographer! Unka candid photography aur video editing work top class hai."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
 
-const drafts = [
-  ...buildDrafts("English", englishGroups),
-  ...buildDrafts("हिंदी", hindiGroups),
-  ...buildDrafts("Hinglish", hinglishGroups)
-];
+  <div class="card" onclick="selectAndRedirect('Pre-wedding shoot ke liye Bhardwaj Photography best option hai. Perfect angles, cinematic video, aur timing ekdam perfect!')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Pre-wedding shoot ke liye Bhardwaj Photography best option hai. Perfect angles, cinematic video, aur timing ekdam perfect!"</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Best photography studio in town! Premium quality photos, clear color grading, aur bohot hi polite behavior.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Best photography studio in town! Premium quality photos, clear color grading, aur bohot hi polite behavior."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Inki photobook album design aur photo clarity bohot zabardast hai. Family functions ke liye Bhardwaj Photography highly recommended!')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Inki photobook album design aur photo clarity bohot zabardast hai. Family functions ke liye Bhardwaj Photography highly recommended!"</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Bhardwaj Photography team made our marriage memories unforgettable! Time par delivery aur high-resolution photos milli.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Bhardwaj Photography team made our marriage memories unforgettable! Time par delivery aur high-resolution photos milli."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Superb camera work and creative lighting! Best professional photographer for ring ceremony and engagement functions.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Superb camera work and creative lighting! Best professional photographer for ring ceremony and engagement functions."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Bhardwaj Photography ka kaam sach mein lajawab hai. Cinematic teaser aur full HD wedding video quality bohot acchi mili.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Bhardwaj Photography ka kaam sach mein lajawab hai. Cinematic teaser aur full HD wedding video quality bohot acchi mili."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Very supportive and skilled photography team. Affordable price mein premium studio experience aur best service!')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Very supportive and skilled photography team. Affordable price mein premium studio experience aur best service!"</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Humare event ki har ek detail bohot khoobsurat tarike se capture ki. Truly the top photo studio by Bhardwaj Photography!')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Humare event ki har ek detail bohot khoobsurat tarike se capture ki. Truly the top photo studio by Bhardwaj Photography!"</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Awesome experience with Bhardwaj Photography! Couple portraits aur drone shooting ka kaam ekdam professional tha.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Awesome experience with Bhardwaj Photography! Couple portraits aur drone shooting ka kaam ekdam professional tha."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Mera birthday photoshoot bohot accha hua. Creative studio setups and fast delivery. 5 Stars to Bhardwaj Photography!')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Mera birthday photoshoot bohot accha hua. Creative studio setups and fast delivery. 5 Stars to Bhardwaj Photography!"</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Professional attitude, creative angles, aur high-quality print. Best photography service for all special occasions.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Professional attitude, creative angles, aur high-quality print. Best photography service for all special occasions."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Bhardwaj Photography ki album printing quality aur sheet finishing bohot premium hai. Sabhi ko bohot pasand aayi.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Bhardwaj Photography ki album printing quality aur sheet finishing bohot premium hai. Sabhi ko bohot pasand aayi."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Great team work and artistic photography style! Agar aapko best photos chahiye toh Bhardwaj Photography zarur visit karein.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Great team work and artistic photography style! Agar aapko best photos chahiye toh Bhardwaj Photography zarur visit karein."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Fully satisfied with Bhardwaj Photography! Best customer experience, pocket-friendly packages, aur top-notch photo quality.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Fully satisfied with Bhardwaj Photography! Best customer experience, pocket-friendly packages, aur top-notch photo quality."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <!-- (16 to 30 Set B - New Additions) -->
+
+  <div class="card" onclick="selectAndRedirect('We chose Bhardwaj Photography FZD for our wedding photography in Firozabad. The team covered the main functions and family moments nicely.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"We chose Bhardwaj Photography FZD for our wedding photography in Firozabad. The team covered the main functions and family moments nicely."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('We wanted natural pictures from our wedding instead of only posed photographs. The candid photography by Bhardwaj Photography captured several wonderful moments.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"We wanted natural pictures from our wedding instead of only posed photographs. The candid photography by Bhardwaj Photography captured several wonderful moments."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('We booked Bhardwaj Photography for our wedding video in Firozabad. The cinematic wedding film is something we love watching again with our family.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"We booked Bhardwaj Photography for our wedding video in Firozabad. The cinematic wedding film is something we love watching again with our family."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Our pre-wedding photoshoot with Bhardwaj Photography was an amazing experience. Truly the best pre-wedding photographer in Firozabad!')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Our pre-wedding photoshoot with Bhardwaj Photography was an amazing experience. Truly the best pre-wedding photographer in Firozabad!"</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('We arranged ring ceremony photography with Bhardwaj Photography FZD. Great engagement photography capturing all family members.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"We arranged ring ceremony photography with Bhardwaj Photography FZD. Great engagement photography capturing all family members."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Bhardwaj Photography FZD provided excellent family wedding photography. We appreciate having clear pictures of all our relatives together.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Bhardwaj Photography FZD provided excellent family wedding photography. We appreciate having clear pictures of all our relatives together."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Their professional photography team was present throughout our function in Firozabad. Perfect coverage of ceremony and guests.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Their professional photography team was present throughout our function in Firozabad. Perfect coverage of ceremony and guests."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('We got our wedding photo album designed by Bhardwaj Photography in Firozabad. The wedding album keeps our selected memories safe and organized.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"We got our wedding photo album designed by Bhardwaj Photography in Firozabad. The wedding album keeps our selected memories safe and organized."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Booked Bhardwaj Photography FZD for a ring ceremony. The pictures of the ring exchange and family moments are amazing!')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Booked Bhardwaj Photography FZD for a ring ceremony. The pictures of the ring exchange and family moments are amazing!"</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('The cinematic wedding film by Bhardwaj Photography gives us a wonderful way to revisit our big day and share it with relatives.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"The cinematic wedding film by Bhardwaj Photography gives us a wonderful way to revisit our big day and share it with relatives."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Traditional wedding photography was important for our rituals, and Bhardwaj Photography delivered a fantastic collection of ceremony photos.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Traditional wedding photography was important for our rituals, and Bhardwaj Photography delivered a fantastic collection of ceremony photos."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('The couple photography session by Bhardwaj Photography gave us gorgeous personal portraits from our wedding day in Firozabad.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"The couple photography session by Bhardwaj Photography gave us gorgeous personal portraits from our wedding day in Firozabad."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Opted for complete wedding photography and videography by Bhardwaj Photography FZD. Both pictures and video coverage were brilliant.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Opted for complete wedding photography and videography by Bhardwaj Photography FZD. Both pictures and video coverage were brilliant."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Hired Bhardwaj Photography for event photography services in Firozabad. Captured guests and decor cleanly to remember the gathering.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Hired Bhardwaj Photography for event photography services in Firozabad. Captured guests and decor cleanly to remember the gathering."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+  <div class="card" onclick="selectAndRedirect('Our pre-wedding photography session captured our pre-wedding journey beautifully. Highly recommend Bhardwaj Photography for couple shoots.')">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">"Our pre-wedding photography session captured our pre-wedding journey beautifully. Highly recommend Bhardwaj Photography for couple shoots."</div>
+    <div class="btn-hint">👉 Tap to Copy & Review on Google</div>
+  </div>
+
+</div>
+
+</body>
+</html>
